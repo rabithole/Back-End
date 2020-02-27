@@ -46,8 +46,6 @@ function genToken(user, id) {
         username: user.username,
     };
 
-    console.log(payload);
-
     const options = {
         expiresIn: '1h'};
     const secret = process.env.JWTSECRET;
