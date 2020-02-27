@@ -5,7 +5,7 @@
 | POST   | Create a user account | '/auth/register' |
 | POST   | Login a user          | '/auth/login'    |
 
-### Base URL: https://guidr1.herokuapp.com/api/
+#### Base URL: https://guidr1.herokuapp.com/api/
 
 ## Register(Non-protected)
 **HTTP Method:** *POST*
@@ -18,7 +18,7 @@
 | username | string | Yes      |
 | password | string | Yes      |
 
-### example
+### Example
 
 ```
 {
@@ -27,10 +27,16 @@
 }
 ```
 
-### return
+### Responses
 ```
+Code: 201 (Created)
 {
    "message": "Registration successful jsmith"!,
    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtsb2NrIiwiaWF0IjoxNTgyODE1NzEyLCJleHAiOjE1ODI4MTkzMTJ9.YaduCwtuESqfPocXdzS2ggRZVxF9lQ5fB0lh7DpXQb8"
+}
+
+Code: 500 (Internal Server Error)
+{
+   "message": "Internal Server Error, Error Returned: <error>"
 }
 ```
