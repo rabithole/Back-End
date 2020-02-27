@@ -5,7 +5,8 @@
 | POST   | Create a user account | '/auth/register' |
 | POST   | Login a user          | '/auth/login'    |
 
-## Register(Non-protected)
-**HTTP Method:** *POST*
+## Base URL: https://guidr1.herokuapp.com/
 
+## Register(##Non-protected)
+**HTTP Method:** *POST*
 **URL:** */auth/register*
