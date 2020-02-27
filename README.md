@@ -5,6 +5,7 @@
 | POST   | Create a user account | '/auth/register' |
 | POST   | Login a user          | '/auth/login'    |
 
-## Register(## Non-protected)
+## Register(Non-protected)
 **HTTP Method:** *POST*
+
 **URL:** */auth/register*
