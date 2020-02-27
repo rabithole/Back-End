@@ -115,7 +115,7 @@ Code: 500 (Internal Server Error)
 
 **URL:** */users/:id*
 
-This gets a specific user and returns the user, profile and all trip data, each trip (1 user can have multiple trips) will have profile data and username attached to each trip in case it is needed.
+This gets a specific user and returns the user, profile and all trip data, each trip (1 user can have multiple trips) will have profile data and username attached it in case it is needed.
 
 ### Get User Table
 
@@ -158,6 +158,7 @@ Code: 200 (OK)
         "date": "2020-06-01 08:00:00:000",
         "trip_type": "Bike Touring"
     }
+    
 Code: 500 (Internal Server Error)
 {
    "message": "Internal Server Error, Error Returned: <error>"
