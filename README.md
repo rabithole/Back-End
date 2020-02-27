@@ -19,9 +19,10 @@
 "password": "klock"
 ```
 
-## Register(Non-protected)
+## Register (Non-protected)
 **HTTP Method:** *POST*
 
+**URL:** */auth/register*
 This registers a new user, it will return the 201 message below with a token, this token needs to be stored in Local Storage.  The token contains the following data
 ```
 {
@@ -37,7 +38,6 @@ In order to decode the token, you need to install jwt-decode https://github.com/
 npm i jwt-decode
 ```
 
-**URL:** */auth/register*
 ### Register Table
 
 | Key      | Type   | Required |
@@ -68,7 +68,7 @@ Code: 500 (Internal Server Error)
 }
 ```
 
-## Login(Non-protected)
+## Login (Non-protected)
 **HTTP Method:** *POST*
 
 **URL:** */auth/login*
