@@ -23,6 +23,7 @@
 **HTTP Method:** *POST*
 
 **URL:** */auth/register*
+
 This registers a new user, it will return the 201 message below with a token, this token needs to be stored in Local Storage.  The token contains the following data
 ```
 {
@@ -69,6 +70,8 @@ Code: 500 (Internal Server Error)
 ```
 
 ## Login (Non-protected)
+This logs in a user, it will return the 202 message below with a token, this token needs to be stored in Local Storage.  The token contains the following data
+
 **HTTP Method:** *POST*
 
 **URL:** */auth/login*
@@ -97,8 +100,7 @@ Code: 202 (Successful Login)
 
 Code: 401 (Unauthorized)
 {
-   "message": "Welcome jsmith!",
-   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtsb2NrIiwiaWF0IjoxNTgyODE1NzEyLCJleHAiOjE1ODI4MTkzMTJ9.YaduCwtuESqfPocXdzS2ggRZVxF9lQ5fB0lh7DpXQb8"
+   "message": "Invalid username or password"
 }
 
 Code: 500 (Internal Server Error)
