@@ -306,7 +306,7 @@ Adds a new profile to the database.  **Note: you cannot add a user_id that does 
      "years_experience": 25,
      "avatar_url": null
 }
-    ```
+ ```
 
 ### Responses
 ```
