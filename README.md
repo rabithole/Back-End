@@ -217,7 +217,7 @@ Code: 500 (Internal Server Error)
 ## Get a Profile by Profile ID (Protected)
 **HTTP Method:** *GET*
 
-**URL:** */profile/:id*
+**URL:** */profiles/:id*
 
 This returns a profile by profile ID
 
@@ -253,7 +253,7 @@ Code: 500 (Internal Server Error)
 ## Get a Specific Users Profile (Protected)
 **HTTP Method:** *GET*
 
-**URL:** */users/profile/:id*
+**URL:** */users/profiles/:id*
 
 This returns a the user's profile by user id
 
