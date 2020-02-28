@@ -4,8 +4,9 @@ module.exports = {
     add,
     findById,
     findBy,
-    GetAllUserData,
-    GetProfileData
+    getAllUserData,
+    getProfileData,
+    getTripData,
 };
 
 async function add(user) {
@@ -21,7 +22,7 @@ function findBy(user) {
     return db('users').where(user);
 }
 
-function GetAllUserData(id)
+function getAllUserData(id)
 {
     return db('users')
         .join('profiles', 'users.id', '=', 'profiles.user_id')
@@ -32,8 +33,13 @@ function GetAllUserData(id)
         .where('users.id', parseInt(id))
 }
 
-function GetProfileData(id)
+function getProfileData(id)
 {
     return db('profiles').where('profiles.user_id', parseInt(id));
+}
+
+function getTripData(id)
+{
+    return db('trips').where('trips.user_id', parseInt(id));
 }
 
