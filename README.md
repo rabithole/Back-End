@@ -286,3 +286,135 @@ Code: 500 (Internal Server Error)
    "message": "Internal Server Error, Error Returned: <error>"
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Get all Trips (Protected)
+**HTTP Method:** *GET*
+
+**URL:** */trips*
+
+This returns all trips
+
+### Example
+
+None
+
+### Responses
+```
+Code: 200 (OK)
+{
+        "id": 1,
+        "title": "7 Long Trail Section Hike",
+        "description": "Hike from the Appalachian approach trail where the Long Trail southern terminus is for a 7 day adventure",
+        "is_private": 1,
+        "is_professional": 0,
+        "duration": "7 days",
+        "distance": "70 miles",
+        "date": "2020-06-01 08:00:00:000",
+        "trip_type": "Backpacking",
+        "user_id": 1
+    }
+    
+Code: 401 (Unauthorized)
+{
+   "message": "Unauthorized access"
+}
+    
+Code: 500 (Internal Server Error)
+{
+   "message": "Internal Server Error, Error Returned: <error>"
+}
+```
+
+## Get a trip by trip ID (Protected)
+**HTTP Method:** *GET*
+
+**URL:** */trip/:id*
+
+This returns a trip by trip ID
+
+### Example
+
+None
+
+### Responses
+```
+Code: 200 (OK)
+{
+        "id": 1,
+        "title": "7 Long Trail Section Hike",
+        "description": "Hike from the Appalachian approach trail where the Long Trail southern terminus is for a 7 day adventure",
+        "is_private": 1,
+        "is_professional": 0,
+        "duration": "7 days",
+        "distance": "70 miles",
+        "date": "2020-06-01 08:00:00:000",
+        "trip_type": "Backpacking",
+        "user_id": 1
+    }
+    
+Code: 401 (Unauthorized)
+{
+   "message": "Unauthorized access"
+}
+    
+Code: 500 (Internal Server Error)
+{
+   "message": "Internal Server Error, Error Returned: <error>"
+}
+```
+
+## Get a Specific Users Trips (Protected)
+**HTTP Method:** *GET*
+
+**URL:** */users/trips/:id*
+
+This returns a the user's trips by user id
+
+### Example
+
+None
+
+### Responses
+```
+Code: 200 (OK)
+{
+        "id": 1,
+        "title": "7 Long Trail Section Hike",
+        "description": "Hike from the Appalachian approach trail where the Long Trail southern terminus is for a 7 day adventure",
+        "is_private": 1,
+        "is_professional": 0,
+        "duration": "7 days",
+        "distance": "70 miles",
+        "date": "2020-06-01 08:00:00:000",
+        "trip_type": "Backpacking",
+        "user_id": 1
+    }
+    
+Code: 401 (Unauthorized)
+{
+   "message": "Unauthorized access"
+}
+    
+Code: 500 (Internal Server Error)
+{
+   "message": "Internal Server Error, Error Returned: <error>"
+}
+```
