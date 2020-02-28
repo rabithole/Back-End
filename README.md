@@ -461,7 +461,7 @@ Adds a new trip to the database.  **Note: you cannot add a user_id that does not
     "trip_type": "Backpacking",
     "user_id": 1
 }
-    ```
+```
 
 ### Responses
 ```
