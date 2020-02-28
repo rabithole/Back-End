@@ -5,6 +5,7 @@ module.exports = {
     findById,
     findBy,
     getAllUserData,
+    getUserData,
     getProfileData,
     getTripData,
 };
@@ -24,11 +25,21 @@ function findBy(user) {
 
 function getAllUserData(id)
 {
+    // return db('users')
+    //     .join('profiles')
+    //     .join('trips')
+    //     .select('users.id', 'users.username', 'profiles.id', 'profiles.title as profile_title', 'profiles.tagline', 'profiles.guide_specialty', 'profiles.age', 'profiles.years_experience', 
+    //     'profiles.avatar_url', 'trips.id', 'trips.title as trips_title', 'trips.description', 'trips.is_private', 'trips.is_professional', 'trips.duration', 'trips.distance', 
+    //     'trips.date', 'trips.trip_type')
+}
+
+function getUserData(id)
+{
     return db('users')
         .join('profiles', 'users.id', '=', 'profiles.user_id')
         .join('trips', 'users.id', '=', 'trips.user_id')
-        .select('users.username', 'profiles.title as profile_title', 'profiles.tagline', 'profiles.guide_specialty', 'profiles.age', 'profiles.years_experience', 
-        'profiles.avatar_url', 'trips.title as trips_title', 'trips.description', 'trips.is_private', 'trips.is_professional', 'trips.duration', 'trips.distance', 
+        .select('users.id', 'users.username', 'profiles.id', 'profiles.title as profile_title', 'profiles.tagline', 'profiles.guide_specialty', 'profiles.age', 'profiles.years_experience', 
+        'profiles.avatar_url', 'trips.id', 'trips.title as trips_title', 'trips.description', 'trips.is_private', 'trips.is_professional', 'trips.duration', 'trips.distance', 
         'trips.date', 'trips.trip_type')
         .where('users.id', parseInt(id))
 }

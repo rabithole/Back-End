@@ -5,6 +5,7 @@ module.exports = {
     findById,
     add,
     update,
+    remove,
 };
 
 function find() {
@@ -20,5 +21,9 @@ function add(data) {
 }
 
 function update(changes, id) {
-    return db('trips').where('id', id).update(changes)
+    return db('trips').where('id', id).update(changes);
 }
+
+function remove(id) {
+    return db('trips').where('id', id).del();
+ }
