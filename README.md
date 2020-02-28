@@ -24,7 +24,7 @@
 "password": "klock"
 ```
 
-##Table layouts
+## Table layouts
 ### Users Table
 | Key      | Type    | Required                |
 | -------- | ------- | ----------------------- |
@@ -178,7 +178,79 @@ Code: 500 (Internal Server Error)
 }
 ```
 
-## Get a Users Profile (Protected)
+## Get all Profiles (Protected)
+**HTTP Method:** *GET*
+
+**URL:** */profiles*
+
+This returns all profiles
+
+### Example
+
+None
+
+### Responses
+```
+Code: 200 (OK)
+    {
+        "id": 1,
+        "user_id": 1,
+        "title": "Thru-hiking Expert",
+        "tagline": "I am happiest in the wilderness",
+        "guide_specialty": "Backpacking",
+        "age": 43,
+        "years_experience": 6,
+        "avatar_url": null
+    }
+    
+Code: 401 (Unauthorized)
+{
+   "message": "Unauthorized access"
+}
+    
+Code: 500 (Internal Server Error)
+{
+   "message": "Internal Server Error, Error Returned: <error>"
+}
+```
+
+## Get a Profile by Profile ID (Protected)
+**HTTP Method:** *GET*
+
+**URL:** */profile/:id*
+
+This returns a profile by profile ID
+
+### Example
+
+None
+
+### Responses
+```
+Code: 200 (OK)
+    {
+        "id": 1,
+        "user_id": 1,
+        "title": "Thru-hiking Expert",
+        "tagline": "I am happiest in the wilderness",
+        "guide_specialty": "Backpacking",
+        "age": 43,
+        "years_experience": 6,
+        "avatar_url": null
+    }
+    
+Code: 401 (Unauthorized)
+{
+   "message": "Unauthorized access"
+}
+    
+Code: 500 (Internal Server Error)
+{
+   "message": "Internal Server Error, Error Returned: <error>"
+}
+```
+
+## Get a Specific Users Profile (Protected)
 **HTTP Method:** *GET*
 
 **URL:** */users/profile/:id*
