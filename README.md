@@ -11,6 +11,7 @@
 
 
 #### Base URL: https://guidr1.herokuapp.com/api/
+#### Verify Server is Running: https://guidr1.herokuapp.com/
 
 #### Seeded users
 ```
