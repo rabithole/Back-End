@@ -24,7 +24,7 @@
 "password": "klock"
 ```
 
-## Table layouts
+## Table Layouts
 ### Users Table
 | Key      | Type    | Required                |
 | -------- | ------- | ----------------------- |
