@@ -545,19 +545,7 @@ Deletes a trip
 
 ### Example
 
-```
-{
-    "title": "Appalachain trail hike in Pennsylvania",
-    "description": "We will pick a random spot on the AT in Pennsylvania and start hiking!",
-    "is_private": 1,
-    "is_professional": 0,
-    "duration": "3 days",
-    "distance": "30 miles",
-    "date": "2020-06-25 08:00:00:000",
-    "trip_type": "Backpacking",
-    "user_id": 1
-}
-```
+None
 
 ### Responses
 ```
