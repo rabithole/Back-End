@@ -7,7 +7,10 @@
 | GET    | Gets a user, proile and all trip data | /users/:id         |
 | GET    | Gets a users profile by id            | /users/profiles:id |
 | GET    | Gets all profiles                     | /profiles          |
-| GET    | Gets a profile by a profile ID        | profiles:id        |
+| GET    | Gets a profile by a profile ID        | /profiles/:id      |
+| PUT    | Edits/Updates a profile               | /profiles/:id      |
+| PUT    | Edits/Updates a trip                  | /trips/:id         |
+| DELETE | Deletes a trip                        | /trips/:id         |
 
 
 #### Base URL: https://guidr1.herokuapp.com/api/
@@ -44,6 +47,7 @@
 | age              | integer         | Yes                     |
 | years_experience | integer         | Yes                     |
 | avatar_url       | text            | No                      |
+| public_url       | text            | Yes                     |
 
 ### Trips Table
 | Key              | Type            | Required                |
@@ -158,6 +162,7 @@ Code: 200 (OK)
         "age": 29,
         "years_experience": 10,
         "avatar_url": null,
+        "public_url": "https://guidr1.herokuapp.com/api/profiles/public/2
         "trips_title": "3 Day Midwest Tour",
         "description": "Travel the midwest on paved roads through central Illinois",
         "is_private": 0,
@@ -202,6 +207,7 @@ Code: 200 (OK)
         "age": 43,
         "years_experience": 6,
         "avatar_url": null
+        "public_url": "https://guidr1.herokuapp.com/api/profiles/public/1
     }
     
 Code: 401 (Unauthorized)
@@ -238,6 +244,7 @@ Code: 200 (OK)
         "age": 43,
         "years_experience": 6,
         "avatar_url": null
+        "public_url": "https://guidr1.herokuapp.com/api/profiles/public/1
     }
     
 Code: 401 (Unauthorized)
@@ -274,6 +281,7 @@ Code: 200 (OK)
         "age": 43,
         "years_experience": 6,
         "avatar_url": null
+       "public_url": "https://guidr1.herokuapp.com/api/profiles/public/1
     }
     
 Code: 401 (Unauthorized)
@@ -305,6 +313,7 @@ Adds a new profile to the database.  **Note: you cannot add a user_id that does 
      "age": 48,
      "years_experience": 25,
      "avatar_url": null
+     "public_url": "https://guidr1.herokuapp.com/api/profiles/public/6
 }
  ```
 
@@ -589,6 +598,7 @@ Edits/Update a profile
     "age": 43,
     "years_experience": 6,
     "avatar_url": null
+    "public_url": "https://guidr1.herokuapp.com/api/profiles/public/1
 }
 ```
 
