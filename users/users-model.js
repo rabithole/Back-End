@@ -5,9 +5,10 @@ module.exports = {
     findById,
     findBy,
     getUserData,
+    getPublicProfileData,
     getProfileData,
     getTripData,
-    //remove
+    remove
 };
 
 async function add(user) {
@@ -34,9 +35,13 @@ function getUserData(id)
         .where('users.id', parseInt(id))
 }
 
+function  getPublicProfileData(id) {
+ db('profiels').where('profiles.user_id'), parseInt(id);
+}
+
+
 function getProfileData(id)
 {
-    console.log(id);
     return db('profiles').where('profiles.user_id', parseInt(id));
 }
 
@@ -45,10 +50,8 @@ function getTripData(id)
     return db('trips').where('trips.user_id', parseInt(id));
 }
 
-// function remove(id) 
-// {
-//     // removed.usersDeleted = db('users').where('id', id).del();
-//     // removed.profilesDeleted = db('profiles').where('user_id', id).del();
-//     // removed.tripsDeleted = db('trips').where('user_id', id).del();
-//  }
+function remove(id) 
+{
+    return db('users').where('id', id).del();
+ }
 
