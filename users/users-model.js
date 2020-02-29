@@ -4,10 +4,10 @@ module.exports = {
     add,
     findById,
     findBy,
-    getAllUserData,
     getUserData,
     getProfileData,
     getTripData,
+    //remove
 };
 
 async function add(user) {
@@ -23,16 +23,6 @@ function findBy(user) {
     return db('users').where(user);
 }
 
-function getAllUserData(id)
-{
-    // return db('users')
-    //     .join('profiles')
-    //     .join('trips')
-    //     .select('users.id', 'users.username', 'profiles.id', 'profiles.title as profile_title', 'profiles.tagline', 'profiles.guide_specialty', 'profiles.age', 'profiles.years_experience', 
-    //     'profiles.avatar_url', 'trips.id', 'trips.title as trips_title', 'trips.description', 'trips.is_private', 'trips.is_professional', 'trips.duration', 'trips.distance', 
-    //     'trips.date', 'trips.trip_type')
-}
-
 function getUserData(id)
 {
     return db('users')
@@ -46,6 +36,7 @@ function getUserData(id)
 
 function getProfileData(id)
 {
+    console.log(id);
     return db('profiles').where('profiles.user_id', parseInt(id));
 }
 
@@ -53,4 +44,11 @@ function getTripData(id)
 {
     return db('trips').where('trips.user_id', parseInt(id));
 }
+
+// function remove(id) 
+// {
+//     // removed.usersDeleted = db('users').where('id', id).del();
+//     // removed.profilesDeleted = db('profiles').where('user_id', id).del();
+//     // removed.tripsDeleted = db('trips').where('user_id', id).del();
+//  }
 

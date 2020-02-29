@@ -42,7 +42,7 @@ router.put('/:id', restricted, (req, res) => {
   
     Trips.findById(id)
     .then(trip => {
-      if (trip) {
+      if (trip.length) {
         Trips.update(changes, id)
         .then(updatedTrip => {
           Trips.findById(id)
