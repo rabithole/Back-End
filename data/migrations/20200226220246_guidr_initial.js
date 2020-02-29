@@ -8,16 +8,18 @@ exports.up = function(knex) {
       })
       .createTable('profiles', tbl => {
         tbl.increments();
-        tbl.integer('user_id').unsigned().notNullable().references('users.id')
+        tbl.integer('user_id').unsigned().notNullable().references('users.id').onUpdate('CASCADE').onDelete('CASCADE');
         tbl.text('title',256).notNullable();
         tbl.text('tagline',256).notNullable();
         tbl.text('guide_specialty',128).notNullable();
         tbl.integer('age').notNullable();
         tbl.integer('years_experience').notNullable();
         tbl.text('avatar_url');
+        tbl.text('public_url').notNullable();
       })
       .createTable('trips', tbl => {
           tbl.increments();
+          tbl.integer('user_id').notNullable().unsigned().references('users.id').onUpdate('CASCADE').onDelete('CASCADE');
           tbl.text('title', 256).notNullable();
           tbl.text('description').notNullable();
           tbl.integer('is_private', 1).notNullable();
@@ -26,24 +28,13 @@ exports.up = function(knex) {
           tbl.text('distance', 128).notNullable();
           tbl.text('date').notNullable();
           tbl.text('trip_type', 64).notNullable();
-      })
-      .createTable('images', tbl => {
-          tbl.increments();
-          tbl.text('image_url').unique();
-      })
-      .createTable('trips_images', tbl => {
-          tbl.integer('trip_id').unsigned().notNullable().references('trips.id');
-          tbl.integer('image_id').unsigned().references('images.id');
-          tbl.integer('user_id').notNullable().unsigned().references('users.id');
-          tbl.primary(['user_id', 'trip_id'])
       });
   };
   
   exports.down = function(knex) {
     return knex.schema
-      .dropTableIfExists('trips_images')
-      .dropTableIfExists('images')
+      .dropTableIfExists('users')
       .dropTableIfExists('trips')
       .dropTableIfExists('profiles')
-      .dropTableIfExists('users')
+
   };

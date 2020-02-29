@@ -6,7 +6,17 @@ const router = express.Router();
 router.use(express.json());
 
 router.get('/:id',restricted, (req, res) => {
-    Users.getAllUserData(req.params.id)
+    Users.getUserData(req.params.id)
+    .then(data => {
+        res.status(200).json(data);
+    })
+    .catch(error => {
+        res.status(500).json({message: 'Internal Server Error, Error Returned: ' + error })
+    });
+})
+
+router.get('/profiles/public/:id', (req, res) => {
+    Users.getUserData(req.params.id)
     .then(data => {
         res.status(200).json(data);
     })
@@ -16,7 +26,7 @@ router.get('/:id',restricted, (req, res) => {
 })
 
 router.get('/profiles/:id',restricted, (req, res) => {
-    Users.getProfileData(req.params.id)
+    Users.getProfileData(req.params.id)    
     .then(data => {
         res.status(200).json(data);
     })
@@ -35,5 +45,20 @@ router.get('/trips/:id',restricted, (req, res) => {
     });
 })
 
+router.delete('/:id', restricted, (req, res) => {
+    const { id } = req.params;
+  
+    Users.remove(id)
+    .then(deleted => {
+      if (deleted) {
+        res.json({ removed: deleted });
+      } else {
+        res.status(404).json({ message: 'Could not find user with given id' });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ message: 'Failed to delete scheme' });
+    });
+  });
 
 module.exports = router;
