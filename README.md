@@ -184,6 +184,40 @@ Code: 500 (Internal Server Error)
 }
 ```
 
+## Delete User (Protected)
+**HTTP Method:** *DELETE*
+
+**URL:** */users/:id*
+
+This deletes the user and all associated data (profiles and trips).
+
+### Example
+
+None
+
+### Responses
+```
+Code: 200 (OK)
+{
+    "removed": 1
+}
+    
+Code: 401 (Unauthorized)
+{
+   "message": "Unauthorized access"
+}
+
+Code: 404 (Not found)
+{
+    "message": "Could not find user with given id"
+}
+    
+Code: 500 (Internal Server Error)
+{
+   "message": "Internal Server Error, Error Returned: <error>"
+}
+```
+
 ## Get all Profiles (Protected)
 **HTTP Method:** *GET*
 
