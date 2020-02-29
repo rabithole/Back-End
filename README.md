@@ -445,7 +445,7 @@ Code: 500 (Internal Server Error)
 
 **URL:** */trips*
 
-Adds a new trip to the database.  **Note: you cannot add a user_id that does not exist due to foriegn key constraints (Note this is not functional yet).**
+Adds a new trip to the database.  **Note: you cannot add a user_id that does not exist due to foriegn key constraints.**
 
 ### Example
 
