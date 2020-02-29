@@ -480,3 +480,156 @@ Code: 500 (Internal Server Error)
    "message": "Internal Server Error, Error Returned: <error>"
 }
 ```
+
+## Edit/Update a Trip (Protected)
+**HTTP Method:** *PUT*
+
+**URL:** */trips/:id*
+
+Edits/Update a trip
+
+### Example
+
+```
+{
+    "title": "Appalachain trail hike in Pennsylvania",
+    "description": "We will pick a random spot on the AT in Pennsylvania and start hiking!",
+    "is_private": 1,
+    "is_professional": 0,
+    "duration": "3 days",
+    "distance": "30 miles",
+    "date": "2020-06-25 08:00:00:000",
+    "trip_type": "Backpacking",
+    "user_id": 1
+}
+```
+
+### Responses
+```
+Code: 200 (OK)
+{
+        "id": 1,
+        "title": "7 Day Long Trail Section Hike",
+        "description": "Hike from the Appalachian approach trail (3.2 miles) where the Long Trail southern terminus is for a 7 day adventure",
+        "is_private": 1,
+        "is_professional": 0,
+        "duration": "7 days",
+        "distance": "70 miles",
+        "date": "2020-06-01 08:00:00:000",
+        "trip_type": "Backpacking",
+        "user_id": 1
+    }
+    
+Code: 401 (Unauthorized)
+{
+   "message": "Unauthorized access"
+}
+
+Code: 404 (Not found)
+{
+    "message": "Could not find a trip with given id"
+}
+    
+Code: 500 (Internal Server Error)
+{
+   "message": "Internal Server Error, Error Returned: <error>"
+}
+```
+
+## Deletes a Trip (Protected)
+**HTTP Method:** *DELETE*
+
+**URL:** */trips/:id*
+
+Deletes a trip
+
+### Example
+
+```
+{
+    "title": "Appalachain trail hike in Pennsylvania",
+    "description": "We will pick a random spot on the AT in Pennsylvania and start hiking!",
+    "is_private": 1,
+    "is_professional": 0,
+    "duration": "3 days",
+    "distance": "30 miles",
+    "date": "2020-06-25 08:00:00:000",
+    "trip_type": "Backpacking",
+    "user_id": 1
+}
+```
+
+### Responses
+```
+Code: 200 (OK)
+{
+    "removed": 1
+}
+    
+Code: 401 (Unauthorized)
+{
+   "message": "Unauthorized access"
+}
+
+Code: 404 (Not found)
+{
+    "message": "Could not find a trip with given id"
+}
+    
+Code: 500 (Internal Server Error)
+{
+   "message": "Internal Server Error, Error Returned: <error>"
+}
+```
+
+## Edit/Update a Profile (Protected)
+**HTTP Method:** *PUT*
+
+**URL:** */profiles/:id*
+
+Edits/Update a profile
+
+### Example
+
+```
+{
+    "id": 1,
+    "user_id": 1,
+    "title": "Thru-hiking Expert",
+    "tagline": "I am happiest on the trails",
+    "guide_specialty": "Backpacking",
+    "age": 43,
+    "years_experience": 6,
+    "avatar_url": null
+}
+```
+
+### Responses
+```
+Code: 200 (OK)
+{
+    "id": 1,
+    "user_id": 1,
+    "title": "Thru-hiking Expert",
+    "tagline": "I am happiest on the trails",
+    "guide_specialty": "Backpacking",
+    "age": 43,
+    "years_experience": 7,
+    "avatar_url": null
+}
+    
+Code: 401 (Unauthorized)
+{
+   "message": "Unauthorized access"
+}
+
+Code: 404 (Not found)
+{
+    "message": "Could not find profile with given id"
+}
+    
+Code: 500 (Internal Server Error)
+{
+   "message": "Internal Server Error, Error Returned: <error>"
+}
+```
