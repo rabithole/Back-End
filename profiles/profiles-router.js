@@ -26,6 +26,13 @@ router.get('/:id',restricted, (req, res) => {
     });
 })
 
+router.get('/public/:id', (res, req) => {
+  Profiles.getPublicUrl(res.params.id)
+  .then(url => {
+    
+  })
+})
+
 router.post('/', restricted, (req, res) => {
     Profiles.add(req.body)
     .then(data => {
