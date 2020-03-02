@@ -5,6 +5,7 @@ module.exports = {
     findById,
     add,
     update,
+    getPublicProfile,
 };
 
 function find() {
@@ -22,4 +23,8 @@ function add(data) {
 function update(changes, id) {
     console.log(changes, id);
     return db('profiles').where('id', id).update(changes)
+}
+
+function getPublicProfile(id) {
+ return db('profiles').where('user_id', id);
 }

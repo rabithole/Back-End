@@ -26,11 +26,14 @@ router.get('/:id',restricted, (req, res) => {
     });
 })
 
-router.get('/public/:id', (res, req) => {
-  Profiles.getPublicUrl(res.params.id)
-  .then(url => {
-    
+router.get('/public/:id', (req, res) => {
+  Profiles.getPublicProfile(req.params.id)
+  .then(profile => {
+    res.status(200).json(profile);
   })
+  .catch(error => {
+    res.status(500).json({message: 'Internal Server Error, Error Returned: ' + error })
+});
 })
 
 router.post('/', restricted, (req, res) => {
