@@ -1,30 +1,47 @@
-const request = require('supertest');
-const profilesModel = require('./profiles-model');
-const profiles = require('./profiles-router');
+const db = require('../data/db-config');
+const profiles = require('./profiles-model');
 
-describe('profiles router', () => {
-    // GET Router method testing
-    describe('GET / - All profiles', () => {
-        it('should return 200 ok', async() => {
-            const res = await request(profiles).get('/:1');
-            expect(res.status).toBe(200); 
+describe('Profiles model', () => {
+
+    describe('Profiles- All Profiles', () => {
+        it('It should have length 3 ', async () => {
+            const data = await profiles.find('/');
+            
+            expect(data).toHaveLength(3);
+        })
+
+        it('It should return an object', async () => {
+            const data = await profiles.findById(1);
+            expect(data).toEqual({
+                id: 1,
+                user_id: 1,
+                title: 'Thru-hiking Expert',
+                tagline: 'I am happiest in the wilderness',
+                guide_specialty: 'Backpacking',
+                age: 43,
+                years_experience: 6,
+                avatar_url: null,
+                public_url: '/public/1'
+            });
         })
     })
-    // describe('insert', () => {
-    //     it('should insert the provided hobbits into the db', async () => {
-    //         await Hobbits.insert({name:'gaffer'});
-    //         await Hobbits.insert({name:'Sam'});
+})
 
-    //         const hobbits = await db('hobbits');
-    //         expect(hobbits).toHaveLength(2);
-    //     })
+// describe('Profiles model POST methods', () => {
+//     it('It should return the ID of 4', async () => {
+//         const id = await profiles.add({
+//             "user_id": 2,
+//             "title": "Thru-hiking Obsessionist",
+//             "tagline": "I am in love with the woods",
+//             "guide_specialty": "All things wilderness",
+//             "age": 48,
+//             "years_experience": 25,
+//             "avatar_url": null,
+//             "public_url": "https://guidr1.herokuapp.com/api/profiles/public/6"
+//         })
+//     })
+// })
 
-    //     it('should return the inserted hobbit', async () => {
-    //         let hobbit = await Hobbits.insert({name: "gaffer"});
-    //         expect(hobbit.name).toBe('gaffer');
-
-    //          hobbit = await Hobbits.insert({name: "sam"});
-    //         expect(hobbit.name).toBe('sam');
-    //     })
-    // })
+beforeEach(async () => {
+    await db('profiles').truncate();
 })
