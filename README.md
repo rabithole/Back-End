@@ -18,6 +18,7 @@
 | GET    | Gets a trip by a trip ID              | /trips/:id           |
 | PUT    | Edits/Updates a profile               | /profiles/:id        |
 | PUT    | Edits/Updates a trip                  | /trips/:id           |
+| DELETE | Deletes a user and all user content   | /users/:id           |
 | DELETE | Deletes a trip                        | /trips/:id           |
 
 
