@@ -1,23 +1,24 @@
 # Guidr Back-End
 
-| Method | Description                           | Endpoint            |
-| ------ | ------------------------------------- | ------------------- |
-| POST   | Create a user account                 | /auth/register      |
-| POST   | Login a user                          | /auth/login         |
-| POST   | Adds a profile                        | /profiles           |
-| POST   | Adds a trip                           | /trips              |
-| GET    | All Users                             | /users              |
-| GET    | Gets a specific user                  | /users/:id          |
+| Method | Description                           | Endpoint             |
+| ------ | ------------------------------------- | -------------------- |
+| POST   | Create a user account                 | /auth/register       |
+| POST   | Login a user                          | /auth/login          |
+| POST   | Adds a profile                        | /profiles            |
+| POST   | Adds a trip                           | /trips               |
+| GET    | All Users                             | /users               |
+| GET    | Gets a specific user                  | /users/:id           |
 | GET    | Gets a user, profile and all trip data | /users/data/:id     |
-| GET    | Gets a users trips by user id         | /users/trips/:id    |
-| GET    | Gets a users profile by user id       | /users/profiles/:id |
-| GET    | Gets all profiles                     | /profiles           |
-| GET    | Gets a profile by a profile ID        | /profiles/:id       |
-| GET    | Gets all trips                        | /trips              |
-| GET    | Gets a trip by a trip ID              | /trips/:id          |
-| PUT    | Edits/Updates a profile               | /profiles/:id       |
-| PUT    | Edits/Updates a trip                  | /trips/:id          |
-| DELETE | Deletes a trip                        | /trips/:id          |
+| GET    | Gets a users trips by user id         | /users/trips/:id     |
+| GET    | Gets a users profile by user id       | /users/profiles/:id  |
+| GET    | Gets all profiles                     | /profiles            |
+| GET    | Gets a profile by a profile ID        | /profiles/:id        |
+| GET    | Gets a public profile by a profile ID | /profiles/public/:id |
+| GET    | Gets all trips                        | /trips               |
+| GET    | Gets a trip by a trip ID              | /trips/:id           |
+| PUT    | Edits/Updates a profile               | /profiles/:id        |
+| PUT    | Edits/Updates a trip                  | /trips/:id           |
+| DELETE | Deletes a trip                        | /trips/:id           |
 
 
 #### Base URL: https://guidr1.herokuapp.com/api/
