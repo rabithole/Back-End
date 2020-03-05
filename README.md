@@ -8,11 +8,12 @@
 | POST   | Adds a trip                           | /trips              |
 | GET    | All Users                             | /users              |
 | GET    | Gets a specific user                  | /users/:id          |
-| GET    | Gets a user, proile and all trip data | /users/data/:id     |
+| GET    | Gets a user, profile and all trip data | /users/data/:id     |
 | GET    | Gets a users trips by user id         | /users/trips/:id    |
 | GET    | Gets a users profile by user id       | /users/profiles/:id |
 | GET    | Gets all profiles                     | /profiles           |
 | GET    | Gets a profile by a profile ID        | /profiles/:id       |
+| GET    | Gets all trips                        | /trips              |
 | GET    | Gets a trip by a trip ID              | /trips/:id          |
 | PUT    | Edits/Updates a profile               | /profiles/:id       |
 | PUT    | Edits/Updates a trip                  | /trips/:id          |
