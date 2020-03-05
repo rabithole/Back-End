@@ -1,7 +1,7 @@
 # Guidr Back-End
 
 | Method | Description                           | Endpoint            |
-| ------ | ------------------------------------- | ------------------_ |
+| ------ | ------------------------------------- | ------------------- |
 | POST   | Create a user account                 | /auth/register      |
 | POST   | Login a user                          | /auth/login         |
 | POST   | Adds a profile                        | /profiles           |
