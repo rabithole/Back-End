@@ -13,6 +13,7 @@
 | GET    | Gets a users profile by user id       | /users/profiles/:id |
 | GET    | Gets all profiles                     | /profiles           |
 | GET    | Gets a profile by a profile ID        | /profiles/:id       |
+| GET    | Gets a trip by a trip ID              | /trips/:id          |
 | PUT    | Edits/Updates a profile               | /profiles/:id       |
 | PUT    | Edits/Updates a trip                  | /trips/:id          |
 | DELETE | Deletes a trip                        | /trips/:id          |
