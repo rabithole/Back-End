@@ -30,6 +30,19 @@
 "password": "klock"
 ```
 
+**Update 3/5/2020**
+One of the developers on my other team found a bug in the /api/users/:id that returns the user, profile and trip data.  There can only be 1 user and 1 profile, but many or no trips assigned to the user.  If there are many trips, it returns multiple objects with redundent information in multiple objects, so if there are 2 trips it will return the user and profile infomration twice, one for each trip.  **The bug get introduced when there is not a profile created or a trip created the /api/users/:id will return an empty dataset.** I can make it return data with NULLs but it might be hard for you get the data out of the objects.  
+I am making the following changes:
+New Route- /api/users/data/:id - this will return the data just like I mentioned above with NULLs
+Modified Route - /api/users/id - this will just return the id and username of the user
+**Suggested Action**
+Instead of using the /api/users/data/:Id use the user's id and do the following:
+/api/users/:id
+/api/users/profiles/:id
+/api/users/trips/:id
+
+This is 3 calls that will get you everything on a specific user
+
 ## Table Layouts
 ### Users Table
 | Key      | Type    | Required                |
