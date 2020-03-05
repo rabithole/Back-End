@@ -40,8 +40,11 @@ Modified Route - /api/users/id - this will just return the id and username of th
 **Suggested Action**
 
 Instead of using the /api/users/data/:Id use the user's id and do the following:
+
 /api/users/:id
+
 /api/users/profiles/:id
+
 /api/users/trips/:id
 
 This is 3 calls that will get you everything on a specific user
