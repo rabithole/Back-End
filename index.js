@@ -1,4 +1,4 @@
-console.log(process.env.USER)
+console.log('User', process.env.USER)
 require('dotenv').config();
 const server = require('./api/server.js');
 

@@ -7,7 +7,6 @@ const usersRouter = require('../users/users-router');
 const profilesRouter = require('../profiles/profiles-router');
 const tripsRouter = require('../trips/trips-router');
 
-
 const server = express();
 
 server.use(helmet());
